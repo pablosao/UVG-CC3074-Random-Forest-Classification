@@ -2,7 +2,7 @@
 """
 Created on Fri Feb  7 17:08:02 2020
 
-@author: pablo
+@author: pablo sao
 """
 # Random Forest Classifier
 
@@ -16,14 +16,8 @@ import pandas as pd
 def label_race(df):
     
     for i in range(len(nombres)):
-        #print(codigoClass.get(nombres[i]))
         df.loc[df['class']==nombres[i],'codigo_clase'] = codigoClass.get(nombres[i])
-        
-    
-   # df.loc[df['class']=='Iris-setosa','codigo_clase'] = 1
-   # df.loc[df['class']=='Iris-versicolor','codigo_clase'] = 2
-   # df.loc[df['class']=='Iris-virginica','codigo_clase'] = 3
-   # df['codigo_clase'].fillna('0', inplace=True)
+
 
 # Importing the datasets
 datasets = pd.read_csv('iris_clean.csv')
@@ -34,10 +28,6 @@ codigoClass = {}
 for i in range(len(nombres)):
     codigoClass[nombres[i]] = i + 1
 
-    
-#print(codigoClass)
-
-#print(nombres)
 
 label_race(datasets)
 
